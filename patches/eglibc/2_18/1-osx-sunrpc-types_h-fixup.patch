@@ -1,0 +1,14 @@
+--- a.eglibc-2_18/sunrpc/rpc/types.h	2014-08-03 15:06:56.000000000 +0100
++++ eglibc-2_18/sunrpc/rpc/types.h	2014-08-03 15:08:50.000000000 +0100
+@@ -69,6 +69,11 @@ typedef unsigned long rpcport_t;
+ #include <sys/types.h>
+ #endif
+ 
++#ifdef __APPLE__
++#define __u_char_defined
++#define __daddr_t_defined
++#endif
++
+ #ifndef __u_char_defined
+ typedef __u_char u_char;
+ typedef __u_short u_short;

@@ -1,0 +1,286 @@
+diff -rup a.eglibc-2_18/sunrpc/auth_unix.c eglibc-2_18/sunrpc/auth_unix.c
+--- eglibc-2_18/sunrpc/auth_unix.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/auth_unix.c	2014-08-03 14:45:19.000000000 +0100
+@@ -43,7 +43,9 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <sys/param.h>
+ #include <wchar.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/clnt_perr.c eglibc-2_18/sunrpc/clnt_perr.c
+--- eglibc-2_18/sunrpc/clnt_perr.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/clnt_perr.c	2014-08-03 14:45:19.000000000 +0100
+@@ -32,7 +32,9 @@
+  */
+ #include <stdio.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <wchar.h>
+ #include <libio/iolibio.h>
+diff -rup a.eglibc-2_18/sunrpc/clnt_raw.c eglibc-2_18/sunrpc/clnt_raw.c
+--- eglibc-2_18/sunrpc/clnt_raw.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/clnt_raw.c	2014-08-03 14:45:19.000000000 +0100
+@@ -39,7 +39,9 @@
+ #include <rpc/rpc.h>
+ #include <rpc/svc.h>
+ #include <rpc/xdr.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ 
+ #define MCALL_MSG_SIZE 24
+ 
+diff -rup a.eglibc-2_18/sunrpc/clnt_tcp.c eglibc-2_18/sunrpc/clnt_tcp.c
+--- eglibc-2_18/sunrpc/clnt_tcp.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/clnt_tcp.c	2014-08-03 14:45:19.000000000 +0100
+@@ -48,7 +48,9 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <sys/poll.h>
+ #include <sys/socket.h>
+diff -rup a.eglibc-2_18/sunrpc/clnt_udp.c eglibc-2_18/sunrpc/clnt_udp.c
+--- eglibc-2_18/sunrpc/clnt_udp.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/clnt_udp.c	2014-08-03 14:45:19.000000000 +0100
+@@ -33,7 +33,9 @@
+ 
+ #include <stdio.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <rpc/xdr.h>
+ #include <rpc/clnt.h>
+diff -rup a.eglibc-2_18/sunrpc/clnt_unix.c eglibc-2_18/sunrpc/clnt_unix.c
+--- eglibc-2_18/sunrpc/clnt_unix.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/clnt_unix.c	2014-08-03 14:45:19.000000000 +0100
+@@ -48,7 +48,9 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <sys/uio.h>
+ #include <sys/poll.h>
+diff -rup a.eglibc-2_18/sunrpc/get_myaddr.c eglibc-2_18/sunrpc/get_myaddr.c
+--- eglibc-2_18/sunrpc/get_myaddr.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/get_myaddr.c	2014-08-03 14:45:19.000000000 +0100
+@@ -38,7 +38,9 @@
+ #include <sys/socket.h>
+ #include <stdio.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <net/if.h>
+ #include <ifaddrs.h>
+ #include <sys/ioctl.h>
+diff -rup a.eglibc-2_18/sunrpc/pm_getmaps.c eglibc-2_18/sunrpc/pm_getmaps.c
+--- eglibc-2_18/sunrpc/pm_getmaps.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/pm_getmaps.c	2014-08-03 14:45:20.000000000 +0100
+@@ -41,7 +41,9 @@
+ #include <stdbool.h>
+ #include <stdio.h>
+ #include <errno.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <unistd.h>
+ #include <not-cancel.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/pmap_clnt.c eglibc-2_18/sunrpc/pmap_clnt.c
+--- eglibc-2_18/sunrpc/pmap_clnt.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/pmap_clnt.c	2014-08-03 14:45:20.000000000 +0100
+@@ -35,7 +35,9 @@
+ 
+ #include <stdio.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <net/if.h>
+ #include <ifaddrs.h>
+ #include <sys/ioctl.h>
+diff -rup a.eglibc-2_18/sunrpc/pmap_rmt.c eglibc-2_18/sunrpc/pmap_rmt.c
+--- eglibc-2_18/sunrpc/pmap_rmt.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/pmap_rmt.c	2014-08-03 14:45:20.000000000 +0100
+@@ -35,7 +35,9 @@
+ 
+ #include <unistd.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <rpc/pmap_prot.h>
+ #include <rpc/pmap_clnt.h>
+diff -rup a.eglibc-2_18/sunrpc/rpc_main.c eglibc-2_18/sunrpc/rpc_main.c
+--- eglibc-2_18/sunrpc/rpc_main.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/rpc_main.c	2014-08-03 14:45:55.000000000 +0100
+@@ -38,7 +38,9 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <locale.h>
+ #include <ctype.h>
+ #include <sys/types.h>
+diff -rup a.eglibc-2_18/sunrpc/rpc_scan.c eglibc-2_18/sunrpc/rpc_scan.c
+--- eglibc-2_18/sunrpc/rpc_scan.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/rpc_scan.c	2014-08-03 14:46:00.000000000 +0100
+@@ -37,7 +37,9 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include "rpc_scan.h"
+ #include "rpc_parse.h"
+ #include "rpc_util.h"
+diff -rup a.eglibc-2_18/sunrpc/rpcinfo.c eglibc-2_18/sunrpc/rpcinfo.c
+--- eglibc-2_18/sunrpc/rpcinfo.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/rpcinfo.c	2014-08-03 14:46:10.000000000 +0100
+@@ -48,7 +48,9 @@
+ #include <signal.h>
+ #include <ctype.h>
+ #include <locale.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ 
+ #include "../version.h"
+ #define PACKAGE _libc_intl_domainname
+diff -rup a.eglibc-2_18/sunrpc/svc_run.c eglibc-2_18/sunrpc/svc_run.c
+--- eglibc-2_18/sunrpc/svc_run.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/svc_run.c	2014-08-03 14:47:35.000000000 +0100
+@@ -33,7 +33,9 @@
+ 
+ #include <errno.h>
+ #include <unistd.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <sys/poll.h>
+ #include <rpc/rpc.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/svc_simple.c eglibc-2_18/sunrpc/svc_simple.c
+--- eglibc-2_18/sunrpc/svc_simple.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/svc_simple.c	2014-08-03 14:47:48.000000000 +0100
+@@ -34,7 +34,9 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <unistd.h>
+ #include <rpc/rpc.h>
+ #include <rpc/pmap_clnt.h>
+diff -rup a.eglibc-2_18/sunrpc/svc_tcp.c eglibc-2_18/sunrpc/svc_tcp.c
+--- eglibc-2_18/sunrpc/svc_tcp.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/svc_tcp.c	2014-08-03 14:47:54.000000000 +0100
+@@ -55,7 +55,9 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <rpc/rpc.h>
+ #include <sys/socket.h>
+ #include <sys/poll.h>
+diff -rup a.eglibc-2_18/sunrpc/svc_udp.c eglibc-2_18/sunrpc/svc_udp.c
+--- eglibc-2_18/sunrpc/svc_udp.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/svc_udp.c	2014-08-03 14:47:57.000000000 +0100
+@@ -56,7 +56,9 @@
+ #include <rpc/rpc.h>
+ #include <sys/socket.h>
+ #include <errno.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ 
+ #ifdef IP_PKTINFO
+ #include <sys/uio.h>
+diff -rup a.eglibc-2_18/sunrpc/svc_unix.c eglibc-2_18/sunrpc/svc_unix.c
+--- eglibc-2_18/sunrpc/svc_unix.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/svc_unix.c	2014-08-03 14:48:03.000000000 +0100
+@@ -62,7 +62,9 @@
+ #include <sys/poll.h>
+ #include <errno.h>
+ #include <stdlib.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <wchar.h>
+ 
+ /*
+diff -rup a.eglibc-2_18/sunrpc/xdr.c eglibc-2_18/sunrpc/xdr.c
+--- eglibc-2_18/sunrpc/xdr.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/xdr.c	2014-08-03 14:48:10.000000000 +0100
+@@ -38,7 +38,9 @@
+ #include <stdio.h>
+ #include <limits.h>
+ #include <string.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <wchar.h>
+ #include <stdint.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/xdr_array.c eglibc-2_18/sunrpc/xdr_array.c
+--- eglibc-2_18/sunrpc/xdr_array.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/xdr_array.c	2014-08-03 14:48:10.000000000 +0100
+@@ -38,7 +38,9 @@
+ #include <string.h>
+ #include <rpc/types.h>
+ #include <rpc/xdr.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <limits.h>
+ #include <wchar.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/xdr_rec.c eglibc-2_18/sunrpc/xdr_rec.c
+--- eglibc-2_18/sunrpc/xdr_rec.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/xdr_rec.c	2014-08-03 14:48:10.000000000 +0100
+@@ -47,7 +47,9 @@
+ #include <unistd.h>
+ #include <stdint.h>
+ #include <rpc/rpc.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <wchar.h>
+ #include <libio/iolibio.h>
+ 
+diff -rup a.eglibc-2_18/sunrpc/xdr_ref.c eglibc-2_18/sunrpc/xdr_ref.c
+--- eglibc-2_18/sunrpc/xdr_ref.c	2014-08-03 14:33:45.000000000 +0100
++++ eglibc-2_18/sunrpc/xdr_ref.c	2014-08-03 14:48:10.000000000 +0100
+@@ -38,7 +38,9 @@
+ #include <string.h>
+ #include <rpc/types.h>
+ #include <rpc/xdr.h>
++#ifndef __APPLE__
+ #include <libintl.h>
++#endif
+ #include <wchar.h>
+ #include <libio/iolibio.h>
+ 
